@@ -128,7 +128,7 @@ h4 {
 }
 
 p {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   color: var(--color-text-medium);
 }
 
@@ -164,7 +164,7 @@ p {
   gap: 8px;
   padding: 14px 28px;
   font-family: var(--font-primary);
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   border: none;
   border-radius: var(--radius-sm);
@@ -284,7 +284,7 @@ p {
 }
 
 .nav-links a {
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   font-weight: 500;
   color: var(--color-text-medium);
   transition: color 0.2s ease;
@@ -424,7 +424,7 @@ p {
 }
 
 .hero-subtitle {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   color: #ffffff;
   font-weight: 700;
   margin-bottom: 32px;
@@ -569,12 +569,13 @@ p {
 }
 
 .feature-card h4 {
+  font-size: 1.25rem;
   margin-bottom: 8px;
   color: var(--color-text-dark);
 }
 
 .feature-card p {
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   color: var(--color-text-medium);
 }
 
@@ -619,13 +620,13 @@ p {
 }
 
 .right-for-you-item h3 {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: #ffffff;
   margin-bottom: 6px;
 }
 
 .right-for-you-item p {
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.75);
 }
 
@@ -709,13 +710,13 @@ p {
 }
 
 .step-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--color-primary);
   margin-bottom: 10px;
 }
 
 .step-card p {
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   color: var(--color-text-medium);
   line-height: 1.65;
 }
@@ -788,7 +789,7 @@ p {
 }
 
 .curriculum-feature-item p {
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   color: var(--color-text-medium);
 }
 
@@ -939,7 +940,7 @@ p {
 }
 
 .team-card-title {
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--color-steel-blue);
   margin-bottom: 4px;
@@ -953,7 +954,7 @@ p {
 }
 
 .team-card-bio {
-  font-size: 0.9rem;
+  font-size: 1.125rem;
   color: var(--color-text-medium);
   line-height: 1.75;
 }
@@ -1007,7 +1008,7 @@ p {
 }
 
 .contact-card-value {
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--color-text-dark);
   margin-bottom: 8px;
@@ -1015,7 +1016,7 @@ p {
 }
 
 .contact-card-detail {
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   color: var(--color-text-medium);
 }
 
@@ -1254,7 +1255,7 @@ p {
 }
 
 .course-section-heading {
-  font-size: 1.375rem;
+  font-size: 1.5625rem;
   color: var(--color-primary);
   margin-bottom: 24px;
 }
@@ -1285,13 +1286,13 @@ p {
 
 .included-item strong {
   display: block;
-  font-size: 0.9375rem;
+  font-size: 1.25rem;
   color: var(--color-primary);
   margin-bottom: 2px;
 }
 
 .included-item p {
-  font-size: 0.8125rem;
+  font-size: 1.125rem;
   color: var(--color-text-medium);
   line-height: 1.4;
 }
@@ -1318,14 +1319,14 @@ p {
 }
 
 .course-faq-q {
-  font-size: 1.0625rem;
+  font-size: 1.5625rem;
   font-weight: 700;
   color: var(--color-primary);
   margin-bottom: 8px;
 }
 
 .course-faq-a {
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   color: var(--color-text-medium);
   line-height: 1.7;
 }
@@ -1430,7 +1431,7 @@ p {
 }
 
 .purchase-features li p {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: var(--color-text-medium);
   margin: 3px 0 0;
   line-height: 1.4;
