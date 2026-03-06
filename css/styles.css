@@ -313,10 +313,10 @@ p {
   gap: 8px;
   background-color: var(--color-cta);
   color: #ffffff !important;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 700;
-  padding: 8px 18px;
-  border-radius: 999px;
+  padding: 11px 24px;
+  border-radius: var(--radius-sm);
   white-space: nowrap;
   transition: background-color 0.2s ease, transform 0.15s ease;
   text-decoration: none;
