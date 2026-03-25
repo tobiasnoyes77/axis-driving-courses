@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Axis Driving Courses</title>
+  <meta name="description" content="Learn about Axis Driving Courses — our mission, commitment to students, and why we're the trusted choice for driver education in Henrico and Richmond, Virginia." />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ─── ABOUT PAGE-SPECIFIC STYLES ─── */
+
+    /* ─── MAIN CONTENT ─── */
+    .about-body {
+      padding: 72px max(24px, calc((100% - 1160px) / 2)) 96px;
+      display: flex;
+      flex-direction: column;
+      gap: 72px;
+    }
+
+    /* ─── SECTION BLOCK ─── */
+    .section-block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 760px;
+    }
+
+    .section-block .block-title {
+      font-size: 1.7rem;
+    }
+
+    .section-block .block-body {
+      line-height: 1.8;
+    }
+
+    .block-body + .block-body { margin-top: -4px; }
+
+    /* ─── WHY CHOOSE GRID ─── */
+    .why-section {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .why-section .block-label,
+    .why-section .block-title {
+      max-width: 760px;
+    }
+
+    .why-section .block-title {
+      font-size: 1.7rem;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .why-card {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 24px 22px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .why-card:hover {
+      border-color: rgba(248,214,74,0.5);
+      box-shadow: 0 4px 20px rgba(248,214,74,0.1);
+    }
+
+    .why-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--yellow);
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .why-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--charcoal);
+    }
+
+    .why-text strong {
+      display: block;
+      font-size: 0.975rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .why-text p {
+      font-size: 0.875rem;
+      color: var(--mid);
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    /* ─── COMMUNITY SECTION ─── */
+    .community-section {
+      background: var(--yellow-light);
+      border: 1.5px solid rgba(248,214,74,0.4);
+      border-radius: var(--radius-lg);
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .community-section .block-label { color: #856c00; }
+    .community-section .block-title { color: var(--charcoal); }
+    .community-section .block-body { max-width: 680px; }
+    .community-section .block-body + .block-body { margin-top: 8px; }
+
+    .community-section .btn-enroll {
+      align-self: flex-start;
+      margin-top: 8px;
+      width: auto;
+    }
+
+    /* ─── ABOUT PAGE RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .why-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .community-section { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <script src="components/nav.js" data-active="about"></script>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span class="current">About Us</span>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <div class="page-tag">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+          Our Story
+        </div>
+        <h1>About Axis Driving Courses</h1>
+        <p>We believe driving is more than learning to operate a vehicle — it's about building confidence, independence, and lifelong safe driving habits.</p>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img src="images/third homepage image.webp" alt="Axis Driving Courses" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT BODY -->
+  <div class="about-body">
+
+    <!-- Mission -->
+    <div class="section-block reveal">
+      <span class="block-label">Our Mission</span>
+      <h2 class="block-title">Equipping Every Student for a Lifetime of Safe Driving</h2>
+      <p class="block-body">Our mission is to equip every student with the knowledge, skills, and mindset needed to become a responsible and confident driver. Through clear instruction and supportive guidance, we help students understand the rules of the road and develop safe driving behaviors that last a lifetime.</p>
+      <p class="block-body">Whether you are a new driver preparing for your learner's permit, an adult learning to drive, or someone completing a required driver improvement course, Axis Driving Courses is here to help you succeed.</p>
+    </div>
+
+    <!-- Commitment -->
+    <div class="section-block reveal">
+      <span class="block-label">Our Commitment</span>
+      <h2 class="block-title">A Supportive Learning Environment for Every Student</h2>
+      <p class="block-body">We understand that learning to drive can feel overwhelming, especially for first-time drivers. That's why our goal is to create a supportive and comfortable learning environment where students can learn at their own pace.</p>
+      <p class="block-body">Our instructors are committed to helping each student gain the confidence they need to drive safely and responsibly. We focus not only on passing tests, but on developing the skills and awareness needed for real-world driving.</p>
+    </div>
+
+    <!-- Why Choose -->
+    <div class="why-section reveal">
+      <span class="block-label">Why Choose Us</span>
+      <h2 class="block-title">Why Choose Axis Driving Courses</h2>
+
+      <div class="why-grid">
+        <div class="why-card reveal reveal-delay-1">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="why-text">
+            <strong>Experienced Instructors</strong>
+            <p>Our knowledgeable instructors are dedicated to helping students become safe, confident, and responsible drivers. We provide clear instruction and guidance to ensure every student understands important driving laws and safety practices.</p>
+          </div>
+        </div>
+
+        <div class="why-card reveal reveal-delay-2">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="why-text">
+            <strong>Flexible Learning Options</strong>
+            <p>We understand that students have busy schedules. That's why we offer flexible online courses and convenient scheduling options to help you complete your training at a time that works for you.</p>
+          </div>
+        </div>
+
+        <div class="why-card reveal reveal-delay-1">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="why-text">
+            <strong>Affordable Programs</strong>
+            <p>We believe quality driver education should be accessible to everyone. Axis Driving Courses offers affordable course options and flexible payment methods to help students complete their required training.</p>
+          </div>
+        </div>
+
+        <div class="why-card reveal reveal-delay-2">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="why-text">
+            <strong>Serving Richmond &amp; Henrico</strong>
+            <p>Axis Driving Courses proudly serves students in Henrico, Richmond, and surrounding Virginia communities. Our goal is to help every student become a safe, responsible driver prepared for the road ahead.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Community / Closing CTA -->
+    <div class="community-section reveal">
+      <span class="block-label">Get Started</span>
+      <h2 class="block-title">Start Your Journey Today</h2>
+      <p class="block-body">Start your journey toward safe and confident driving today. Whether you need a state-required course or simply want to become a better driver, Axis Driving Courses is ready to help.</p>
+      <a href="mailto:preferredchoicedrivingacademy@gmail.com?subject=Enrollment Inquiry" class="btn-enroll">
+        Enroll Now
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <script src="components/bottom-cta.js"></script>
+
+  <script src="components/footer.js"></script>
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Preferred Choice Driving Academy</title>
+  <meta name="description" content="Frequently asked questions about Preferred Choice Driving Academy's courses, instructors, and enrollment process. Serving Henrico and Richmond, Virginia." />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ─── FAQ PAGE-SPECIFIC STYLES ─── */
+
+    /* ─── MAIN BODY ─── */
+    .faq-body {
+      padding: 72px max(24px, calc((100% - 1160px) / 2)) 96px;
+      display: flex;
+      flex-direction: column;
+      gap: 72px;
+    }
+
+    /* ─── SECTION HEADER ─── */
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 760px;
+    }
+
+    /* ─── ACCORDION ─── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 24px;
+      background: var(--white);
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      transition: background 0.2s;
+    }
+
+    .faq-question:hover { background: var(--bg-alt); }
+
+    .faq-item.open .faq-question { background: var(--bg-alt); }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--yellow-light);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.3s;
+    }
+
+    .faq-icon svg {
+      width: 14px;
+      height: 14px;
+      color: var(--charcoal);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-icon { background: var(--yellow); }
+    .faq-item.open .faq-icon svg { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s ease;
+      padding: 0 24px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 600px;
+      padding: 0 24px 24px;
+    }
+
+    .faq-answer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 4px;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+
+    .faq-answer p {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.75;
+      font-weight: 500;
+    }
+
+    .faq-address {
+      background: var(--bg-alt);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    .faq-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .faq-contact-item svg { color: var(--red); flex-shrink: 0; }
+
+    .faq-contact-item a {
+      color: var(--charcoal);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .faq-contact-item a:hover { color: var(--red); }
+
+    /* ─── WHO SHOULD TAKE ─── */
+    .who-section {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .who-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 24px 22px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .who-card:hover {
+      border-color: rgba(248,214,74,0.5);
+      box-shadow: 0 4px 20px rgba(248,214,74,0.1);
+    }
+
+    .who-card-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--yellow);
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .who-card-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--charcoal);
+    }
+
+    .who-card strong {
+      font-size: 0.975rem;
+      font-weight: 800;
+      color: var(--charcoal);
+    }
+
+    .who-card p {
+      font-size: 0.875rem;
+      color: var(--mid);
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    /* ─── STILL HAVE QUESTIONS ─── */
+    .contact-strip {
+      background: var(--yellow-light);
+      border: 1.5px solid rgba(248,214,74,0.4);
+      border-radius: var(--radius-lg);
+      padding: 40px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .contact-strip-text strong {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .contact-strip-text p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      font-weight: 500;
+    }
+
+    .contact-strip-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* ─── PAGE-SPECIFIC RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .who-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .contact-strip { flex-direction: column; align-items: flex-start; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <script src="components/nav.js" data-active="faq"></script>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span class="current">FAQ</span>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-tag">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+      Help Center
+    </div>
+    <h1>Frequently Asked Questions</h1>
+    <p>Find answers to common questions about our courses, instructors, and enrollment process. Still have questions? We're happy to help.</p>
+  </div>
+
+  <!-- FAQ BODY -->
+  <div class="faq-body">
+
+    <!-- FAQ Accordion -->
+    <div class="reveal">
+      <div class="section-header mb-28">
+        <span class="block-label">Common Questions</span>
+        <h2 class="block-title">Answers to Your Questions</h2>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            Can I visit the academy in person?
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Yes. Prospective students are welcome to visit Preferred Choice Driving Academy to learn more about our programs. Visiting allows you to ask questions, speak with our team, and feel confident in your choice of driving school.</p>
+              <div class="faq-address">
+                305 W Williamsburg Rd Ste A<br>
+                Henrico, VA 23231
+              </div>
+              <p>If you plan to visit, we recommend calling ahead so we can make sure someone is available to assist you.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            Who are the instructors at Preferred Choice Driving Academy?
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Our instructors are experienced and certified professionals dedicated to helping students become safe and confident drivers. They are trained to teach Virginia driving laws, defensive driving techniques, and responsible driving habits in a supportive learning environment.</p>
+              <p>Our goal is not just to help students pass tests, but to prepare them for real-world driving situations.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+            Can I speak with someone about which course I need?
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Yes. Our team is happy to help you choose the right course. Whether you are preparing for your learner's permit, completing driver education, or taking a court-required course, we can guide you through the enrollment process.</p>
+              <p>You can reach us by phone or email:</p>
+              <div class="faq-contact-list">
+                <div class="faq-contact-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.29 6.29l.97-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <a href="tel:+18043564195">(804) 356-4195</a>
+                </div>
+                <div class="faq-contact-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <a href="mailto:preferredchoicedrivingacademy@gmail.com" style="word-break:break-all;">preferredchoicedrivingacademy@gmail.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Who Should Take Our Courses -->
+    <div class="who-section reveal">
+      <div class="section-header">
+        <span class="block-label">Course Eligibility</span>
+        <h2 class="block-title">Who Should Take Our Courses?</h2>
+      </div>
+      <p class="faq-body-text">Preferred Choice Driving Academy offers courses designed for a variety of drivers. Find the group that fits your situation below.</p>
+
+      <div class="who-grid">
+
+        <div class="who-card reveal reveal-delay-1">
+          <div class="who-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+          </div>
+          <strong>Teen Drivers Under 18</strong>
+          <p>Students under 18 preparing to apply for a Virginia driver's license must complete required driver education programs. These courses help teens learn traffic laws, defensive driving techniques, and safe driving habits.</p>
+        </div>
+
+        <div class="who-card reveal reveal-delay-2">
+          <div class="who-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <strong>Parents or Guardians of Teen Drivers</strong>
+          <p>Parents and guardians may also participate in required driver education components, including the Parent/Teen driving safety session, which helps families understand licensing requirements and safe driving expectations.</p>
+        </div>
+
+        <div class="who-card reveal reveal-delay-1">
+          <div class="who-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <strong>First-Time Drivers</strong>
+          <p>If you have never held a driver's license before, our courses provide the knowledge needed to prepare for the DMV permit test and begin learning safe driving skills.</p>
+        </div>
+
+        <div class="who-card reveal reveal-delay-2">
+          <div class="who-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <strong>Drivers Improving Their Record</strong>
+          <p>Drivers may also take courses to improve driving knowledge, satisfy court requirements, or earn safe driving points.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Still have questions strip -->
+    <div class="contact-strip reveal">
+      <div class="contact-strip-text">
+        <strong>Still have questions?</strong>
+        <p>Our team is ready to help. Contact us by phone or visit our contact page.</p>
+      </div>
+      <div class="contact-strip-actions">
+        <a href="tel:+18043564195" class="btn-dark">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.29 6.29l.97-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (804) 356-4195
+        </a>
+        <a href="contact.html" class="btn-outline">
+          Contact Page
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="components/bottom-cta.js"></script>
+
+  <script src="components/footer.js"></script>
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>

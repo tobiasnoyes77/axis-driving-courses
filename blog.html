@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Preferred Choice Driving Academy</title>
+  <meta name="description" content="Read driving tips, safety advice, and educational articles from Preferred Choice Driving Academy. Serving Henrico and Richmond, Virginia." />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ─── BLOG PAGE-SPECIFIC STYLES ─── */
+
+    .blog-body {
+      padding: 72px max(24px, calc((100% - 760px) / 2)) 96px;
+      display: flex;
+      flex-direction: column;
+      gap: 72px;
+    }
+
+    /* ─── BLOG LISTING ─── */
+    .blog-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 32px 28px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .blog-card:hover {
+      border-color: rgba(248,214,74,0.5);
+      box-shadow: 0 4px 20px rgba(248,214,74,0.1);
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .blog-card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--yellow-light);
+      border: 1.5px solid rgba(244,197,66,0.3);
+      padding: 3px 10px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--yellow-dark);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .blog-card h3 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      color: var(--charcoal);
+      line-height: 1.25;
+    }
+
+    .blog-card p {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    .blog-card .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--red);
+      text-decoration: none;
+      align-self: flex-start;
+      transition: gap 0.2s;
+    }
+
+    .blog-card:hover .read-more { gap: 10px; }
+
+    .read-more svg { width: 14px; height: 14px; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+  <script src="components/nav.js" data-active="blog"></script>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span class="current">Blog</span>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-tag">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+      Driving Tips & Insights
+    </div>
+    <h1>Blog</h1>
+    <p>Practical driving advice, safety tips, and educational articles to help you become a safer, more confident driver.</p>
+  </div>
+
+  <!-- BLOG BODY -->
+  <div class="blog-body">
+
+    <div class="blog-grid">
+
+      <a href="blog-aggressive-driving-ticket.html" class="blog-card reveal">
+        <div class="blog-card-meta">
+          <span class="blog-card-tag">Traffic Law</span>
+          <span>March 5, 2026</span>
+        </div>
+        <h3>What to Do When You Get an Aggressive Driving Ticket</h3>
+        <p>Getting an aggressive driving ticket can feel overwhelming. The consequences can be serious — from hefty fines to points on your license. Here's a clear, practical guide to help you navigate the situation.</p>
+        <span class="read-more">
+          Read Article
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a href="blog-defensive-driving.html" class="blog-card reveal">
+        <div class="blog-card-meta">
+          <span class="blog-card-tag">Driving Safety</span>
+          <span>December 4, 2025</span>
+        </div>
+        <h3>Defensive Driving: The Skill That Could Save Your Life</h3>
+        <p>Every time you get behind the wheel, you're making a quiet agreement with the road. Defensive driving is a mindset and skillset designed not just to follow the rules, but to anticipate danger before it happens.</p>
+        <span class="read-more">
+          Read Article
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+    </div>
+
+  </div>
+
+  <script src="components/bottom-cta.js"></script>
+
+  <script src="components/footer.js"></script>
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>

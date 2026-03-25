@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Axis Driving Courses | Virginia DMV-Approved Driver Education</title>
+  <meta name="description" content="Axis Driving Courses offers Virginia DMV-approved online driver education courses. Serving Henrico and Richmond, VA." />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow: 0 2px 10px rgba(0,0,0,0.06);
+      --shadow-lg: 0 6px 24px rgba(0,0,0,0.08);
+      --radius: 16px;
+      --radius-lg: 24px;
+    }
+
+    /* Kill all hover transforms */
+    .course-card:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-yellow:hover,
+    .btn-enroll:hover,
+    .btn-view-course:hover,
+    .btn-outline-dark:hover,
+    .in-car-offering:hover,
+    .about-tag:hover,
+    .nav-cta:hover,
+    .btn-dark:hover,
+    .btn-outline:hover {
+      transform: none !important;
+    }
+
+    /* Kill scroll-reveal — show everything immediately */
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px max(24px, calc((100% - 1160px) / 2)) 80px;
+    }
+
+    .hero-img-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/hero.webp') center center / cover no-repeat;
+      z-index: 0;
+    }
+
+    .hero-img-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(255,255,255,0.97) 0%,
+        rgba(255,255,255,0.92) 42%,
+        rgba(255,255,255,0.55) 68%,
+        rgba(255,255,255,0.1) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow-light);
+      border: 1.5px solid rgba(244,197,66,0.5);
+      border-radius: 100px;
+      padding: 6px 16px 6px 8px;
+      margin-bottom: 28px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #6b5600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--yellow-dark);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+      margin-bottom: 10px;
+      color: var(--charcoal);
+    }
+
+    .hero h1 .highlight {
+      color: var(--red);
+      display: block;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-weight: 700;
+      color: var(--mid);
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: var(--mid);
+      margin-bottom: 28px;
+      max-width: 540px;
+      line-height: 1.75;
+    }
+
+    .hero-checks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin-bottom: 36px;
+    }
+
+    .hero-check {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .check-icon svg { width: 11px; height: 11px; }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--charcoal);
+      padding: 28px max(24px, calc((100% - 1160px) / 2));
+    }
+
+    .trust-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 56px;
+      flex-wrap: wrap;
+    }
+
+    .trust-bar-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      white-space: nowrap;
+    }
+
+    .trust-bar-logos {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .trust-bar-logos img {
+      height: 65px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+
+    .trust-bar-logos img:hover { opacity: 1; }
+
+    /* ─── COURSES ─── */
+    .courses { background: var(--white); }
+    .courses-header { text-align: center; }
+    .courses-header .section-subtitle { margin-left: auto; margin-right: auto; }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 44px;
+    }
+
+    .course-card {
+      background: #f5f5f5;
+      border: 1px solid #e0e0e0;
+      border-radius: 0;
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .course-card::before { display: none; }
+
+    .course-card:hover {
+      border-color: #ccc;
+      box-shadow: var(--shadow);
+    }
+
+    .course-badge {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: var(--yellow);
+      color: #5a4500;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+
+    .course-icon {
+      width: 42px;
+      height: 42px;
+      background: #fff3d0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .course-icon svg { width: 20px; height: 20px; color: #6b5600; }
+
+    .course-card h3 { font-size: 1.15rem; font-weight: 800; line-height: 1.3; color: var(--charcoal); }
+    .course-card p { font-size: 0.95rem; color: #666; line-height: 1.65; flex-grow: 1; }
+
+    .course-price { display: flex; align-items: center; gap: 10px; }
+    .course-price .price-old { font-size: 0.95rem; font-weight: 700; color: #bbb; text-decoration: line-through; }
+    .course-price .price-new { font-size: 1.25rem; font-weight: 900; color: var(--red); }
+
+    .course-actions { display: flex; gap: 10px; margin-top: auto; align-items: center; }
+    .btn-view-course { border-radius: 50px; }
+
+    /* ─── IN-CAR LESSONS ─── */
+    .in-car { background: #fafafa; }
+
+    .in-car-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .in-car-content .section-subtitle { margin-bottom: 24px; }
+
+    .in-car-offerings { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+
+    .in-car-offering {
+      padding: 18px 20px;
+      border-radius: var(--radius);
+      border: 1px solid #e0e0e0;
+      background: var(--white);
+    }
+
+    .in-car-offering:hover { border-color: #ccc; box-shadow: var(--shadow-sm); transform: none; }
+    .in-car-offering h4 { font-size: 1rem; font-weight: 800; color: var(--charcoal); margin-bottom: 4px; }
+    .in-car-offering .offering-price { font-size: 1.1rem; font-weight: 900; color: var(--red); margin-bottom: 6px; }
+    .in-car-offering p { font-size: 0.85rem; color: #666; line-height: 1.6; }
+
+    .in-car-image { border-radius: var(--radius-lg); overflow: hidden; }
+    .in-car-image img { width: 100%; height: 440px; object-fit: cover; display: block; border-radius: var(--radius-lg); }
+    .in-car .btn-primary { border-radius: 50px; box-shadow: none; }
+
+    /* ─── ABOUT ─── */
+    .about { background: var(--white); }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-content .section-subtitle { margin-bottom: 24px; }
+
+    .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+
+    .about-tag {
+      background: #f5f5f5;
+      border: 1px solid #e0e0e0;
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #666;
+    }
+
+    .about-tag:hover { background: #eee; border-color: #ccc; color: #444; }
+
+    .about-image-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 12px; }
+    .about-img-main { grid-column: span 2; border-radius: var(--radius-lg); overflow: hidden; height: 220px; }
+    .about-img-main img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .about-stat-card {
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .about-stat-card:hover { border-color: #ccc; box-shadow: var(--shadow-sm); }
+    .about-stat-card .stat-num { font-size: 1.8rem; font-weight: 900; color: var(--red); display: block; line-height: 1; margin-bottom: 4px; }
+    .about-stat-card .stat-label { font-size: 0.72rem; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* ─── WHY US ─── */
+    .why-us { background: #fafafa; }
+
+    .why-us-inner {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .why-us-card {
+      background: var(--white);
+      border: 1px solid #e0e0e0;
+      border-radius: 0;
+      padding: 20px 18px;
+    }
+
+    .why-us-card h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .why-us-card p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .why-us-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .why-us-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 400px;
+    }
+
+    /* ─── CONTACT ─── */
+    .contact { background: #2a3b52; position: relative; overflow: hidden; }
+
+    .contact-bg-img {
+      position: absolute;
+      inset: 0;
+      background: url('images/img2.webp') center center / cover no-repeat;
+      opacity: 0.05;
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact .section-label { color: var(--yellow); }
+    .contact .section-title { color: var(--white); }
+    .contact .section-subtitle { color: rgba(255,255,255,0.55); }
+    .contact-info { display: flex; flex-direction: column; gap: 22px; }
+    .contact-item { display: flex; gap: 12px; align-items: flex-start; }
+
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(244,197,66,0.1);
+      border: 1px solid rgba(244,197,66,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item-icon svg { width: 18px; height: 18px; color: var(--yellow); }
+    .contact-item-content h4 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+    .contact-item-content p, .contact-item-content a { font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.85); text-decoration: none; line-height: 1.55; transition: color 0.2s; }
+    .contact-item-content a:hover { color: var(--yellow); }
+
+    .hours-grid { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+    .hours-row { display: flex; justify-content: space-between; gap: 20px; font-size: 0.88rem; }
+    .hours-row .day { color: rgba(255,255,255,0.45); font-weight: 500; }
+    .hours-row .time { color: rgba(255,255,255,0.85); font-weight: 700; }
+
+    .contact-map {
+      border-radius: 0;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .contact-map iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+    }
+
+    /* ─── SECTION LABELS — less corporate ─── */
+    .section-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: none; }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.02em; }
+    .section-subtitle { font-size: 1rem; color: #666; }
+
+    /* ─── FOOTER ─── */
+    footer { background: #1e2e42; padding: 24px max(24px, calc((100% - 1000px) / 2)); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .courses-grid { grid-template-columns: 1fr 1fr; }
+      .why-us-inner { grid-template-columns: 1fr; }
+      .why-us-image img { min-height: 300px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 640px) {
+      section { padding: 60px 20px; }
+      .courses-grid { grid-template-columns: 1fr; }
+      .why-us-grid { grid-template-columns: 1fr; }
+      .why-us-image img { min-height: 250px; }
+      .hero { padding-top: 100px; }
+      .about-image-grid { grid-template-columns: 1fr; }
+      .about-img-main { grid-column: span 1; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+      .contact-cta-box { padding: 24px 20px; }
+      .trust-bar-inner { gap: 24px; flex-direction: column; }
+      .trust-bar-logos { gap: 32px; }
+      .trust-bar-logos img { height: 50px; }
+    }
+  </style>
+</head>
+<body>
+
+  <script src="components/nav.js"></script>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-img-bg"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Court-Approved &amp; DMV-Certified
+      </div>
+
+      <h1>Got a Ticket? Need Your License?<span class="highlight">We've Got You Covered.</span></h1>
+
+      <p class="hero-tagline">Your Road to Safe Driving Starts Here</p>
+
+      <p>We help drivers build the knowledge, skills, and confidence needed to drive safely and responsibly.</p>
+
+
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <span class="trust-bar-label">Trusted By</span>
+      <div class="trust-bar-logos">
+        <img src="Trust Bar/dmv.png" alt="Virginia DMV" />
+        <img src="Trust Bar/bbb_trust_logo-removebg-preview.png" alt="Better Business Bureau" />
+        <img src="Trust Bar/images__1_-removebg-preview.png" alt="Google Reviews" />
+        <img src="Trust Bar/nsc_name_hor_4c_cmyk_pos-removebg-preview.png" alt="National Safety Council" />
+      </div>
+    </div>
+  </div>
+
+  <!-- COURSES -->
+  <section class="courses" id="courses">
+    <div class="courses-header">
+      <h2 class="section-title">Online Courses</h2>
+      <p class="section-subtitle">We offer Virginia DMV-approved courses for new drivers and experienced drivers alike. Pick the one that fits your situation.</p>
+    </div>
+
+    <div class="courses-grid">
+      <div class="course-card featured">
+        <span class="course-badge">Most Popular</span>
+        <div class="course-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>8 Hour Driver Improvement Clinic</h3>
+        <p>Got a traffic ticket? This course can help dismiss it, lower your insurance, and clean up your driving record.</p>
+        <div class="course-price">
+          <span class="price-old">$100</span>
+          <span class="price-new">$74.95</span>
+        </div>
+        <div class="course-actions">
+          <a href="driver-improvement-course.html" class="btn-view-course">Learn More <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>12 Hour RADEP Course</h3>
+        <p>Facing a reckless driving charge? This court-approved course can help strengthen your case.</p>
+        <div class="course-price">
+          <span class="price-old">$250</span>
+          <span class="price-new">$199.95</span>
+        </div>
+        <div class="course-actions">
+          <a href="radep-course.html" class="btn-view-course">Learn More <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3>8 Hour Driver Manual Course</h3>
+        <p>Failed the knowledge test 3 times? No worries -- this course walks you through the Virginia Driver Manual so you're ready next time.</p>
+        <div class="course-price">
+          <span class="price-old">$200</span>
+          <span class="price-new">$149.96</span>
+        </div>
+        <div class="course-actions">
+          <a href="drivers-manual-course.html" class="btn-view-course">Learn More <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title text-center mt-24 mb-20">In-Vehicle Courses</h2>
+
+    <div class="courses-grid">
+      <div class="course-card">
+        <div class="course-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Behind the Wheel (In-Car)</h3>
+        <p>7 driving sessions plus 7 observation periods. You'll get a completion certificate when you're done. Required for teens getting their Virginia license.</p>
+        <div class="course-price">
+          <span class="price-new">$425.00</span>
+        </div>
+        <div class="course-actions">
+          <a href="teen-behind-the-wheel.html" class="btn-view-course">Learn More <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </div>
+        <h3>Private Driving Lessons</h3>
+        <p>One-on-one lessons tailored to where you're at. Book 1-3 hours at $99/hr, or 4+ hours at the discounted rate of $85/hr.</p>
+        <div class="course-price">
+          <span class="price-new">$99.00 / hour</span>
+        </div>
+        <div class="course-actions">
+          <a href="private-driving-lessons.html" class="btn-view-course">Learn More <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-us" id="why-us">
+    <div class="why-us-inner">
+      <div class="why-us-left">
+        <h2 class="section-title mb-28">Our Students Love Us</h2>
+        <div class="why-us-grid">
+          <div class="why-us-card">
+            <h3>Weekday & Weekend Classes</h3>
+            <p>Flexible lesson times that fit even the busiest lifestyles.</p>
+          </div>
+          <div class="why-us-card">
+            <h3>Top-Rated Instructors</h3>
+            <p>Certified, patient professionals who make learning stress-free and effective.</p>
+          </div>
+          <div class="why-us-card">
+            <h3>Pick-Up & Drop-Off Available</h3>
+            <p>Hassle-free transportation for an additional fee.</p>
+          </div>
+          <div class="why-us-card">
+            <h3>Fully-Equipped Training Vehicles</h3>
+            <p>Dual-control brakes, safety signage, and full insurance for a secure learning experience.</p>
+          </div>
+          <div class="why-us-card">
+            <h3>Both In-Person & Online Training</h3>
+            <p>Choose the learning style that suits you best with our flexible in-person and online driver training options.</p>
+          </div>
+          <div class="why-us-card">
+            <h3>We Handle the DMV Paperwork</h3>
+            <p>Focus on driving while we take care of the details.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why-us-image">
+        <img src="images/8-1-1.webp" alt="Driving lesson" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-bg-img"></div>
+    <div class="contact-inner">
+      <div>
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Questions? Just Ask.</h2>
+        <p class="section-subtitle mb-32">Not sure which course you need? Have a question about signing up? Give us a call or send an email -- we're happy to help.</p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-item-content">
+              <h4>Address</h4>
+              <p>555 Belaire Ave #210<br>Chesapeake, VA 23320</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.29 6.29l.97-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-item-content">
+              <h4>Phone</h4>
+              <a href="tel:+18046010480">(804) 601-0480</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-item-content">
+              <h4>Email</h4>
+              <a href="mailto:support@axisdrivingcourses.com">support@axisdrivingcourses.com</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="contact-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.098956106918!2d-76.24251672356614!3d36.76819346950216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89babd3b53ac3859%3A0x14edb085d91cba41!2sAxis%20Driving%20Courses!5e0!3m2!1sen!2sus!4v1774465157030!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <script src="components/footer.js"></script>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teen Behind-the-Wheel Driving Program | Axis Driving Courses</title>
+  <meta name="description" content="Virginia DMV-approved behind-the-wheel driving program for teens. 7 driving sessions, 7 observation sessions, road test prep, and certificate of completion." />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ─── PAGE-SPECIFIC STYLES ─── */
+
+    /* Includes Grid */
+    .includes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .includes-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+    }
+
+    .includes-card h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .includes-card p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Why Parents Grid */
+    .parents-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .parents-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 20px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .parents-card .benefit-check {
+      width: 24px;
+      height: 24px;
+      background: var(--yellow);
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .parents-card .benefit-check svg { width: 12px; height: 12px; }
+
+    .parents-card-text strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 3px;
+    }
+
+    .parents-card-text span {
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.55;
+    }
+
+    /* Learn Categories */
+    .learn-categories {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .learn-category {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+    }
+
+    .learn-category h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+    }
+
+    .learn-category ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .learn-category ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+
+    .learn-category ul li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* Road Test Prep */
+    .road-test-block {
+      background: var(--bg-alt);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+    }
+
+    .road-test-block h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .road-test-block > p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .road-test-block ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .road-test-block ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+
+    .road-test-block ul li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* Availability Notice */
+    .availability-notice {
+      background: var(--yellow-light);
+      border: 1.5px solid rgba(244,197,66,0.5);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+    }
+
+    .availability-notice h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #6b5000;
+      margin-bottom: 8px;
+    }
+
+    .availability-notice p {
+      font-size: 0.875rem;
+      color: #6b5000;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    /* Pricing card standalone */
+    .pricing-standalone {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .pricing-standalone h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .pricing-standalone .price-amount {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--red);
+      letter-spacing: -0.03em;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .pricing-standalone .price-detail {
+      font-size: 0.875rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .intro-text {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 640px) {
+      .includes-grid { grid-template-columns: 1fr; }
+      .learn-categories { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <script src="components/nav.js"></script>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#courses">Courses</a>
+      <span>›</span>
+      <span class="current">Teen Behind-the-Wheel Program</span>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <div class="course-tag">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+          DMV-Approved Driver Training for Teens
+        </div>
+        <h1>Teen Behind-the-Wheel Driving Program <span class="code">(Virginia)</span></h1>
+        <p>Help your teen become a safe, confident driver — and meet all Virginia licensing requirements. Our state-certified behind-the-wheel program gives teens the real-world experience they need to pass their road test and drive independently.</p>
+        <a href="contact.html" class="btn-enroll" style="max-width: 360px; margin-top: 20px;">
+          Reserve Your Teen's Spot Today
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img src="images/8-1-1.webp" alt="Teen behind the wheel driving lesson" />
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE BODY -->
+  <div class="page-body">
+    <div class="page-content">
+
+      <!-- What This Program Includes -->
+      <div class="content-block reveal">
+        <span class="block-label">Program Details</span>
+        <h2 class="block-title">What This Program Includes</h2>
+
+        <div class="includes-grid">
+          <div class="includes-card">
+            <h3>7 Driving Sessions (Behind-the-Wheel)</h3>
+            <p>Hands-on training with a certified instructor in real traffic conditions.</p>
+          </div>
+          <div class="includes-card">
+            <h3>7 Observation Sessions</h3>
+            <p>Learn by watching other students and understanding real driving situations.</p>
+          </div>
+          <div class="includes-card">
+            <h3>DMV-Required Curriculum</h3>
+            <p>Fully approved and meets all Virginia Department of Motor Vehicles requirements.</p>
+          </div>
+          <div class="includes-card">
+            <h3>Road Test Preparation</h3>
+            <p>We train specifically for what your teen will be tested on.</p>
+          </div>
+        </div>
+
+        <div class="includes-grid" style="grid-template-columns: 1fr; margin-top: 0;">
+          <div class="includes-card">
+            <h3>Certificate of Completion</h3>
+            <p>Required to move forward in the licensing process.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Who This Is For -->
+      <div class="content-block reveal">
+        <span class="block-label">Eligibility</span>
+        <h2 class="block-title">Who This Is For</h2>
+        <p class="block-body">This program is designed for teens who:</p>
+
+        <ul class="simple-list">
+          <li>Are at least 15 years and 6 months old</li>
+          <li>Have a valid Virginia learner's permit</li>
+          <li>Need to complete the required behind-the-wheel training</li>
+          <li>Want structured, professional instruction (not just parent practice)</li>
+        </ul>
+      </div>
+
+      <!-- Why Parents Choose Us -->
+      <div class="content-block reveal">
+        <span class="block-label">Why Us</span>
+        <h2 class="block-title">Why Parents Choose Us</h2>
+
+        <div class="parents-grid">
+          <div class="parents-card">
+            <div class="benefit-check">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1F3A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="parents-card-text">
+              <strong>Safety-First Instruction</strong>
+              <span>Dual-control vehicles and highly trained instructors ensure a safe learning environment.</span>
+            </div>
+          </div>
+          <div class="parents-card">
+            <div class="benefit-check">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1F3A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="parents-card-text">
+              <strong>Calm, Professional Coaches</strong>
+              <span>We specialize in working with nervous and first-time drivers.</span>
+            </div>
+          </div>
+          <div class="parents-card">
+            <div class="benefit-check">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1F3A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="parents-card-text">
+              <strong>Structured Skill Progression</strong>
+              <span>Your teen builds confidence step-by-step — from basic control to real traffic.</span>
+            </div>
+          </div>
+          <div class="parents-card">
+            <div class="benefit-check">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1F3A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="parents-card-text">
+              <strong>Convenient Scheduling</strong>
+              <span>After school, weekends, and flexible options available.</span>
+            </div>
+          </div>
+          <div class="parents-card">
+            <div class="benefit-check">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1F3A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="parents-card-text">
+              <strong>Pickup & Drop-Off Options</strong>
+              <span>We make it easy to fit training into your family's schedule.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What Your Teen Will Learn -->
+      <div class="content-block reveal">
+        <span class="block-label">Curriculum</span>
+        <h2 class="block-title">What Your Teen Will Learn</h2>
+
+        <div class="learn-categories">
+          <div class="learn-category">
+            <h3>Foundation Skills</h3>
+            <ul>
+              <li>Steering, braking, and acceleration control</li>
+              <li>Proper turning and lane positioning</li>
+              <li>Mirror use and awareness</li>
+            </ul>
+          </div>
+          <div class="learn-category">
+            <h3>Real-World Driving</h3>
+            <ul>
+              <li>Neighborhood and city driving</li>
+              <li>Intersections and right-of-way</li>
+              <li>Lane changes and traffic flow</li>
+            </ul>
+          </div>
+          <div class="learn-category">
+            <h3>Advanced Skills</h3>
+            <ul>
+              <li>Highway driving and merging</li>
+              <li>Defensive driving techniques</li>
+              <li>Hazard recognition and response</li>
+            </ul>
+          </div>
+          <div class="learn-category">
+            <h3>Parking Mastery</h3>
+            <ul>
+              <li>Parallel parking</li>
+              <li>Parking lots and tight spaces</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Road Test Prep -->
+      <div class="content-block reveal">
+        <span class="block-label">Test Prep</span>
+        <h2 class="block-title">Built for Virginia Road Test Success</h2>
+        <p class="intro-text">We don't just teach driving — we prepare your teen to pass the Virginia road test with confidence.</p>
+
+        <div class="road-test-block">
+          <h3>Our instructors focus on:</h3>
+          <ul>
+            <li>Common test routes and scenarios</li>
+            <li>Mistakes that cause failures</li>
+            <li>Building calm, confident decision-making</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pricing -->
+      <div class="content-block reveal">
+        <span class="block-label">Pricing</span>
+        <h2 class="block-title">Pricing</h2>
+
+        <div class="pricing-standalone">
+          <h3>Teen Behind-the-Wheel Program</h3>
+          <span class="price-amount">$425.00</span>
+          <span class="price-detail">Includes all required driving + observation sessions.</span>
+        </div>
+
+        <!-- Availability Notice -->
+        <div class="availability-notice">
+          <h3>Limited Availability</h3>
+          <p>Due to instructor scheduling and DMV requirements, spots fill quickly — especially after school and weekends. Secure your teen's training schedule today.</p>
+        </div>
+
+        <a href="contact.html" class="btn-enroll max-w-320" style="margin-top: 4px;">
+          Reserve Your Teen's Spot Today
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="page-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-price-recap">
+          <span class="sidebar-price-amount">$425</span>
+        </div>
+        <span class="sidebar-price-note">Complete teen BTW program</span>
+        <a href="contact.html" class="btn-enroll">
+          Reserve Your Spot
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="sidebar-card mt-20">
+        <h4>What's Included</h4>
+        <div class="sidebar-features">
+          <div class="sidebar-feature">
+            <div class="sidebar-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="9" width="22" height="9" rx="2"/><path d="M5 9V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+            </div>
+            7 driving sessions
+          </div>
+          <div class="sidebar-feature">
+            <div class="sidebar-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            7 observation sessions
+          </div>
+          <div class="sidebar-feature">
+            <div class="sidebar-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            DMV-approved curriculum
+          </div>
+          <div class="sidebar-feature">
+            <div class="sidebar-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+            </div>
+            Completion certificate
+          </div>
+          <div class="sidebar-feature">
+            <div class="sidebar-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            </div>
+            One-on-one instruction
+          </div>
+          <div class="sidebar-feature">
+            <div class="sidebar-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            Pickup & drop-off available
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card mt-20">
+        <h4>Need Help?</h4>
+        <div class="sidebar-contact">
+          <div class="sidebar-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.29 6.29l.97-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+18046010480">(804) 601-0480</a>
+          </div>
+          <div class="sidebar-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:support@axisdrivingcourses.com">Email Us</a>
+          </div>
+          <div class="sidebar-contact-item sidebar-hours-note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="sidebar-hours-text">Mon&ndash;Fri: 9am&ndash;7pm &bull; Sat&ndash;Sun: By Appt</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="components/bottom-cta.js"></script>
+  <script src="components/footer.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
