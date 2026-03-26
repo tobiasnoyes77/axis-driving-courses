@@ -45,7 +45,14 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="${coursesHref}" onclick="toggleMenu()">Courses</a>
+    <a href="#" class="mobile-dropdown-toggle" onclick="toggleMobileSub(event)">Courses <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+    <div class="mobile-sub" id="mobileSub">
+      <a href="driver-improvement-course.html" onclick="toggleMenu()">Online 8 Hour Driver Improvement Clinic</a>
+      <a href="radep-course.html" onclick="toggleMenu()">Online 12 Hour RADEP</a>
+      <a href="drivers-manual-course.html" onclick="toggleMenu()">Online 8 Hour Driver Manual Course / 3 Fail Re-examination</a>
+      <a href="teen-behind-the-wheel.html" onclick="toggleMenu()">Teen Behind-the-Wheel Program</a>
+      <a href="private-driving-lessons.html" onclick="toggleMenu()">Private Driving Lessons</a>
+    </div>
     <a href="about.html" onclick="toggleMenu()">About</a>
     <a href="blog.html" onclick="toggleMenu()">Blog</a>
     <a href="${contactMobileHref}" onclick="toggleMenu()">Contact</a>

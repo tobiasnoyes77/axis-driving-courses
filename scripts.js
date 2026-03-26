@@ -6,6 +6,15 @@ function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
 }
 
+// Mobile courses sub-menu toggle
+function toggleMobileSub(e) {
+  e.preventDefault();
+  var sub = document.getElementById('mobileSub');
+  var toggle = e.currentTarget;
+  sub.classList.toggle('open');
+  toggle.classList.toggle('open');
+}
+
 // Close mobile menu when clicking outside
 document.addEventListener('click', function(e) {
   const menu = document.getElementById('mobileMenu');

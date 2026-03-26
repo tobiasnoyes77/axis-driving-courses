@@ -190,6 +190,19 @@ nav.scrolled { box-shadow: var(--shadow); }
 
 .mobile-menu a:hover { color: var(--charcoal); }
 
+.mobile-dropdown-toggle { display: flex; align-items: center; gap: 4px; }
+.mobile-dropdown-toggle svg { transition: transform 0.2s; }
+.mobile-dropdown-toggle.open svg { transform: rotate(180deg); }
+
+.mobile-sub {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  padding-left: 16px;
+}
+.mobile-sub.open { display: flex; }
+.mobile-sub a { font-size: 0.9rem; font-weight: 500; }
+
 /* ═══════════════════════════════════════════════════════════
    BREADCRUMB
    ═══════════════════════════════════════════════════════════ */
@@ -955,6 +968,7 @@ footer {
   .hero-image-wrap { display: none; }
   .page-body { grid-template-columns: 1fr; }
   .page-sidebar { position: static; }
+  .mobile-hide { display: none; }
 }
 
 @media (max-width: 640px) {
