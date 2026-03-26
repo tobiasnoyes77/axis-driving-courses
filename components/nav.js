@@ -27,11 +27,11 @@
       <li class="has-dropdown">
         <a href="${coursesHref}">Courses <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
         <ul class="nav-dropdown">
-          <li><a href="driver-improvement-course.html">Online 8 Hour Driver Improvement Clinic</a></li>
-          <li><a href="radep-course.html">Online 12 Hour RADEP</a></li>
-          <li><a href="drivers-manual-course.html">Online 8 Hour Driver Manual Course / 3 Fail Re-examination</a></li>
-          <li><a href="teen-behind-the-wheel.html">Teen Behind-the-Wheel Program</a></li>
-          <li><a href="private-driving-lessons.html">Private Driving Lessons</a></li>
+          <li><a href="driver-improvement-course.html">8 Hour Driver Improvement</a></li>
+          <li><a href="radep-course.html">12 Hour RADEP</a></li>
+          <li><a href="drivers-manual-course.html">8 Hour Driver Manual / Re-Examination</a></li>
+          <li><a href="teen-behind-the-wheel.html">Behind-the-Wheel</a></li>
+          <li><a href="private-driving-lessons.html">Private Lessons</a></li>
         </ul>
       </li>
       <li><a href="about.html"${activeClass('about')}>About</a></li>
@@ -47,11 +47,11 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#" class="mobile-dropdown-toggle" onclick="toggleMobileSub(event)">Courses <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
     <div class="mobile-sub" id="mobileSub">
-      <a href="driver-improvement-course.html" onclick="toggleMenu()">Online 8 Hour Driver Improvement Clinic</a>
-      <a href="radep-course.html" onclick="toggleMenu()">Online 12 Hour RADEP</a>
-      <a href="drivers-manual-course.html" onclick="toggleMenu()">Online 8 Hour Driver Manual Course / 3 Fail Re-examination</a>
-      <a href="teen-behind-the-wheel.html" onclick="toggleMenu()">Teen Behind-the-Wheel Program</a>
-      <a href="private-driving-lessons.html" onclick="toggleMenu()">Private Driving Lessons</a>
+      <a href="driver-improvement-course.html" onclick="toggleMenu()">8 Hour Driver Improvement</a>
+      <a href="radep-course.html" onclick="toggleMenu()">12 Hour RADEP</a>
+      <a href="drivers-manual-course.html" onclick="toggleMenu()">8 Hour Driver Manual / Re-Examination</a>
+      <a href="teen-behind-the-wheel.html" onclick="toggleMenu()">Behind-the-Wheel</a>
+      <a href="private-driving-lessons.html" onclick="toggleMenu()">Private Lessons</a>
     </div>
     <a href="about.html" onclick="toggleMenu()">About</a>
     <a href="blog.html" onclick="toggleMenu()">Blog</a>
