@@ -117,6 +117,11 @@
       50% { opacity: 0.5; transform: scale(0.85); }
     }
 
+    @keyframes btn-pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(200,30,30,0.35); }
+      50% { box-shadow: 0 4px 30px rgba(200,30,30,0.6), 0 0 0 8px rgba(200,30,30,0.15); }
+    }
+
     .hero h1 {
       font-size: clamp(2.4rem, 5.5vw, 4rem);
       font-weight: 900;
@@ -522,19 +527,11 @@
         Court-Approved &amp; DMV-Certified
       </div>
 
-      <h1>Got a Ticket? Need Your License?<span class="highlight">We've Got You Covered.</span></h1>
+      <h1><span style="color: var(--red);">Got a Ticket?</span> <span style="color: #2a3b52;">Need Your License?</span><span class="highlight" style="color: #2a3b52; font-weight: 600; margin-top: 20px; font-size: 0.65em;">Best Virginia Driving School.</span></h1>
 
-      <p class="hero-tagline">Your Road to Safe Driving Starts Here</p>
-
-      <div class="embedsocial-hashtag" data-ref="8de82d5c94a1d26013108f6897fa6e24e300ed7f" style="transform: scale(1.2); transform-origin: left center;"></div>
-      <script>
-        (function(d, s, id) {
-          var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id;
-          js.src = "https://embedsocial.com/cdn/ht.js";
-          d.getElementsByTagName("head")[0].appendChild(js);
-        }(document, "script", "EmbedSocialHashtagScript"));
-      </script>
-
+      <div class="hero-actions" style="margin-top: 48px;">
+        <a href="https://form.typeform.com/to/nXBqOPwj" class="btn-primary" style="font-size: 1.45rem; padding: 24px 64px; border-radius: 50px; background: var(--red); color: #fff; box-shadow: 0 4px 20px rgba(200,30,30,0.35); display: inline-flex; align-items: center; gap: 10px; animation: btn-pulse 2s ease-in-out infinite;">Find My Course <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
 
     </div>
   </section>
