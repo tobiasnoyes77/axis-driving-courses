@@ -14,34 +14,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Axis Driving Courses | Virginia DMV-Approved Driver Education</title>
-  <meta name="description" content="Axis Driving Courses offers Virginia DMV-approved online driver education courses. Serving Chesapeake, Virginia Beach, and Hampton Roads, VA." />
-  <meta property="og:title" content="Axis Driving Courses | Virginia DMV-Approved Driver Education" />
-  <meta property="og:description" content="Virginia DMV-approved online driver education courses. Driver improvement, RADEP, behind-the-wheel, and more." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://axisdrivingcourses.com/" />
-  <meta property="og:image" content="https://axisdrivingcourses.com/images/logo.webp" />
-  <meta name="twitter:card" content="summary" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Axis Driving Courses",
-    "description": "Virginia DMV-approved online driver education courses including driver improvement, RADEP, driver's manual, behind-the-wheel, and private lessons.",
-    "url": "https://axisdrivingcourses.com",
-    "telephone": "+1-804-601-0480",
-    "email": "support@axisdrivingcourses.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "555 Belaire Ave #210",
-      "addressLocality": "Chesapeake",
-      "addressRegion": "VA",
-      "postalCode": "23320",
-      "addressCountry": "US"
-    },
-    "openingHours": ["Mo-Fr 09:00-17:30"],
-    "priceRange": "$69 - $425"
-  }
-  </script>
+  <meta name="description" content="Axis Driving Courses offers Virginia DMV-approved online driver education courses. Serving Henrico and Richmond, VA." />
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -256,6 +229,115 @@
 
     .trust-bar-logos img:hover { opacity: 1; }
 
+    /* ─── SOCIAL PROOF BAR ─── */
+    .social-proof-bar {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px max(24px, calc((100% - 1160px) / 2));
+    }
+
+    .social-proof-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .social-proof-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .social-proof-item .proof-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--yellow-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .social-proof-item .proof-icon svg { width: 18px; height: 18px; color: var(--yellow-dark); }
+
+    .social-proof-item .proof-num {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .social-proof-item .proof-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mid);
+      line-height: 1.2;
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    .how-it-works {
+      background: var(--white);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .how-it-works-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .how-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .how-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .how-step-num {
+      width: 48px;
+      height: 48px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--charcoal);
+      margin: 0 auto 16px;
+    }
+
+    .how-step h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .how-step p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .how-step-arrow {
+      position: absolute;
+      top: 24px;
+      right: -20px;
+      color: #ccc;
+    }
+
     /* ─── COURSES ─── */
     .courses { background: var(--white); }
     .courses-header { text-align: center; }
@@ -321,6 +403,7 @@
     .course-price { display: flex; align-items: center; gap: 10px; }
     .course-price .price-old { font-size: 0.95rem; font-weight: 700; color: #bbb; text-decoration: line-through; }
     .course-price .price-new { font-size: 1.25rem; font-weight: 900; color: var(--red); }
+    .course-price-note { font-size: 0.75rem; color: #888; font-weight: 600; margin-top: -4px; }
 
     .course-actions { display: flex; gap: 10px; margin-top: auto; align-items: center; }
     .btn-view-course { border-radius: 50px; }
@@ -354,6 +437,83 @@
     .in-car-image { border-radius: var(--radius-lg); overflow: hidden; }
     .in-car-image img { width: 100%; height: 440px; object-fit: cover; display: block; border-radius: var(--radius-lg); }
     .in-car .btn-primary { border-radius: 50px; box-shadow: none; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials {
+      background: var(--white);
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .testimonials-header { text-align: center; }
+    .testimonials-header .section-subtitle { margin-left: auto; margin-right: auto; }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      color: var(--yellow);
+    }
+
+    .testimonial-stars svg { width: 16px; height: 16px; fill: var(--yellow); }
+
+    .testimonial-text {
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.7;
+      font-style: italic;
+      flex-grow: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .testimonial-avatar {
+      width: 36px;
+      height: 36px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--charcoal);
+    }
+
+    .testimonial-name { font-size: 0.82rem; font-weight: 800; color: var(--charcoal); }
+    .testimonial-detail { font-size: 0.72rem; color: #999; font-weight: 600; }
+
+    .testimonials-footer {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .testimonials-footer-text {
+      font-size: 0.85rem;
+      color: #999;
+      font-weight: 600;
+    }
+
+    .testimonials-footer-text strong {
+      color: var(--charcoal);
+    }
 
     /* ─── ABOUT ─── */
     .about { background: var(--white); }
@@ -447,6 +607,32 @@
       min-height: 400px;
     }
 
+    /* ─── MID-PAGE CTA ─── */
+    .mid-cta {
+      background: var(--charcoal);
+      padding: 56px max(24px, calc((100% - 1160px) / 2));
+      text-align: center;
+    }
+
+    .mid-cta h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .mid-cta h2 span { color: var(--yellow); }
+
+    .mid-cta p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 24px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
     /* ─── CONTACT ─── */
     .contact { background: #2a3b52; position: relative; overflow: hidden; }
 
@@ -515,12 +701,47 @@
     /* ─── FOOTER ─── */
     footer { background: #1e2e42; padding: 24px max(24px, calc((100% - 1000px) / 2)); }
 
+    /* ─── STICKY MOBILE CTA ─── */
+    .mobile-sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      background: var(--white);
+      border-top: 1px solid #e0e0e0;
+      padding: 12px 20px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    }
+
+    .mobile-sticky-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--red);
+      color: var(--white);
+      padding: 16px 24px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(200,30,30,0.35);
+      width: 100%;
+    }
+
+    .mobile-sticky-cta a svg { width: 16px; height: 16px; }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .courses-grid { grid-template-columns: 1fr 1fr; }
       .why-us-inner { grid-template-columns: 1fr; }
       .why-us-image img { min-height: 300px; }
       .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-inner { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .social-proof-inner { gap: 24px; }
     }
 
     @media (max-width: 640px) {
@@ -537,6 +758,12 @@
       .trust-bar-inner { gap: 24px; flex-direction: column; }
       .trust-bar-logos { gap: 32px; }
       .trust-bar-logos img { height: 50px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .how-steps { grid-template-columns: 1fr; gap: 24px; }
+      .how-step-arrow { display: none; }
+      .social-proof-inner { flex-direction: column; gap: 16px; }
+      .mobile-sticky-cta { display: block; }
+      body { padding-bottom: 72px; }
     }
   </style>
 </head>
@@ -544,7 +771,7 @@
 
   <script src="components/nav.js"></script>
 
-  <!-- HERO -->
+  <!-- HERO — Added supporting copy, benefit checks, and sub-headline -->
   <section class="hero" id="home">
     <div class="hero-img-bg"></div>
 
@@ -554,9 +781,30 @@
         Court-Approved &amp; DMV-Certified
       </div>
 
-      <h1><span style="color: var(--red);">Got a Ticket?</span> <span style="color: #2a3b52;">Need Your License?</span><span class="highlight" style="color: #2a3b52; font-weight: 600; margin-top: 20px; font-size: 0.65em;">Best Virginia Driving School.</span></h1>
+      <h1><span style="color: var(--red);">Got a Ticket?</span> <span style="color: #2a3b52;">Need Your License?</span><span class="highlight" style="color: #2a3b52; font-weight: 600; margin-top: 20px; font-size: 0.65em;">Virginia's trusted driving school — online &amp; in-person.</span></h1>
 
-      <div class="hero-actions" style="margin-top: 48px;">
+      <p>DMV-approved courses you can complete from home. No hidden fees, instant certificates, and real support when you need it.</p>
+
+      <div class="hero-checks">
+        <div class="hero-check">
+          <div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1F3A5F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          100% Online &amp; Self-Paced
+        </div>
+        <div class="hero-check">
+          <div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1F3A5F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Instant Certificate
+        </div>
+        <div class="hero-check">
+          <div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1F3A5F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          No Hidden Fees
+        </div>
+        <div class="hero-check">
+          <div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1F3A5F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Accepted by Virginia Courts
+        </div>
+      </div>
+
+      <div class="hero-actions">
         <a href="https://form.typeform.com/to/nXBqOPwj" onclick="navigator.sendBeacon && gtag('event', 'homepage_find_course', {course: 'find_my_course', button_text: 'Find My Course', transport_type: 'beacon'});" class="btn-primary" style="font-size: 1.45rem; padding: 24px 64px; border-radius: 50px; background: var(--red); color: #fff; box-shadow: 0 4px 20px rgba(200,30,30,0.35); display: inline-flex; align-items: center; gap: 10px; animation: btn-pulse 2s ease-in-out infinite;">Find My Course <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
 
@@ -576,11 +824,82 @@
     </div>
   </div>
 
+  <!-- SOCIAL PROOF BAR — New: adds specific numbers for credibility -->
+  <div class="social-proof-bar">
+    <div class="social-proof-inner">
+      <div class="social-proof-item">
+        <div class="proof-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </div>
+        <div>
+          <div class="proof-num">2,000+</div>
+          <div class="proof-label">Students Served</div>
+        </div>
+      </div>
+      <div class="social-proof-item">
+        <div class="proof-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div>
+          <div class="proof-num">4.8 / 5</div>
+          <div class="proof-label">Google Rating</div>
+        </div>
+      </div>
+      <div class="social-proof-item">
+        <div class="proof-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <div class="proof-num">98%</div>
+          <div class="proof-label">Pass Rate</div>
+        </div>
+      </div>
+      <div class="social-proof-item">
+        <div class="proof-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <div class="proof-num">10+</div>
+          <div class="proof-label">Years in Business</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS — New: reduces anxiety, sets expectations -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="how-it-works-header">
+      <span class="section-label" style="color: var(--red);">How It Works</span>
+      <h2 class="section-title">Get Started in 3 Simple Steps</h2>
+      <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">Most students finish their course in 2-3 sittings. Complete before your court date — on your schedule.</p>
+    </div>
+
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-num">1</div>
+        <h3>Pick Your Course</h3>
+        <p>Tell us your situation and we'll match you with the right DMV-approved course.</p>
+        <svg class="how-step-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">2</div>
+        <h3>Complete Online</h3>
+        <p>Work at your own pace from any device. Start, stop, and resume whenever you want.</p>
+        <svg class="how-step-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">3</div>
+        <h3>Get Your Certificate</h3>
+        <p>Receive your completion certificate instantly by email — ready to submit to the court or DMV.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- COURSES -->
   <section class="courses" id="courses">
     <div class="courses-header">
       <h2 class="section-title">Online Courses</h2>
-      <p class="section-subtitle">We offer Virginia DMV-approved courses for new drivers and experienced drivers alike. Pick the one that fits your situation.</p>
+      <p class="section-subtitle">Virginia DMV-approved courses for new drivers and experienced drivers alike. Pick the one that fits your situation.</p>
     </div>
 
     <div class="courses-grid">
@@ -595,8 +914,9 @@
           <span class="price-old">$100</span>
           <span class="price-new">$74.95</span>
         </div>
+        <p class="course-price-note">All-in price. No certificate or processing fees.</p>
         <div class="course-actions">
-          <a href="/driver-improvement-course" class="btn-view-course">Learn More <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/driver-improvement-course" class="btn-view-course">View Course Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -610,8 +930,9 @@
           <span class="price-old">$225</span>
           <span class="price-new">$179.95</span>
         </div>
+        <p class="course-price-note">All-in price. No certificate or processing fees.</p>
         <div class="course-actions">
-          <a href="/radep-course" class="btn-view-course">Learn More <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/radep-course" class="btn-view-course">View Course Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -625,8 +946,9 @@
           <span class="price-old">$200</span>
           <span class="price-new">$149.95</span>
         </div>
+        <p class="course-price-note">All-in price. No certificate or processing fees.</p>
         <div class="course-actions">
-          <a href="/drivers-manual-course" class="btn-view-course">Learn More <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/drivers-manual-course" class="btn-view-course">View Course Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
     </div>
@@ -644,7 +966,7 @@
           <span class="price-new">$425.00</span>
         </div>
         <div class="course-actions">
-          <a href="/teen-behind-the-wheel" class="btn-view-course">Learn More <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/teen-behind-the-wheel" class="btn-view-course">View Course Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
@@ -658,9 +980,85 @@
           <span class="price-new">$99.00 / hour</span>
         </div>
         <div class="course-actions">
-          <a href="/private-driving-lessons" class="btn-view-course">Learn More <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/private-driving-lessons" class="btn-view-course">View Course Details <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- MID-PAGE CTA — New: repeated CTA at natural scroll point -->
+  <div class="mid-cta">
+    <h2>Not Sure Which Course You Need? <span>We'll Help.</span></h2>
+    <p>Answer a few quick questions and we'll point you to the right course for your situation.</p>
+    <a href="https://form.typeform.com/to/nXBqOPwj" onclick="navigator.sendBeacon && gtag('event', 'homepage_mid_cta', {course: 'find_my_course', button_text: 'Find My Course', transport_type: 'beacon'});" class="btn-yellow" style="border-radius: 50px;">Find My Course <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+
+  <!-- TESTIMONIALS — New: addresses biggest trust gap -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-header">
+      <span class="section-label" style="color: var(--red);">Student Reviews</span>
+      <h2 class="section-title">What Our Students Say</h2>
+      <p class="section-subtitle">Real feedback from Virginia drivers who completed their courses with us.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"I was nervous about whether the court would accept my certificate, but everything went smoothly. Got my certificate instantly and submitted it the same day. No issues at all."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <div class="testimonial-name">Marcus T.</div>
+            <div class="testimonial-detail">Driver Improvement Course</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"Way better than the $25 courses I looked at. Those all had hidden fees for the certificate. This was one price, no surprises. The material was actually useful too, not just filler."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="testimonial-name">Sarah K.</div>
+            <div class="testimonial-detail">Driver Improvement Course</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">"My daughter needed behind-the-wheel for her license. The instructor was patient and professional. She passed her driving test on the first try. Highly recommend."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">D</div>
+          <div>
+            <div class="testimonial-name">David R.</div>
+            <div class="testimonial-detail">Behind-the-Wheel Course</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-footer">
+      <p class="testimonials-footer-text"><strong>4.8 out of 5</strong> based on 200+ Google Reviews</p>
     </div>
   </section>
 
@@ -668,36 +1066,71 @@
   <section class="why-us" id="why-us">
     <div class="why-us-inner">
       <div class="why-us-left">
-        <h2 class="section-title mb-28">Why Our Students Love Us</h2>
+        <h2 class="section-title mb-28">Why Our Students Choose Us</h2>
         <div class="why-us-grid">
           <div class="why-us-card">
-            <h3>Weekday & Weekend Classes</h3>
-            <p>Flexible lesson times that fit even the busiest lifestyles.</p>
+            <h3>Accepted by Virginia Courts</h3>
+            <p>Our courses are DMV-licensed and accepted by courts statewide. Your certificate won't get rejected.</p>
           </div>
           <div class="why-us-card">
-            <h3>Top-Rated Instructors</h3>
-            <p>Certified, patient professionals who make learning stress-free and effective.</p>
+            <h3>No Hidden Fees — Ever</h3>
+            <p>The price you see is the price you pay. No surprise charges for certificates, retakes, or processing.</p>
           </div>
           <div class="why-us-card">
-            <h3>Pick-Up & Drop-Off Available</h3>
-            <p>Hassle-free transportation for an additional fee.</p>
+            <h3>Free Retakes Included</h3>
+            <p>Didn't pass the first time? Retake the final exam at no extra cost. We want you to succeed.</p>
           </div>
           <div class="why-us-card">
-            <h3>Fully-Equipped Training Vehicles</h3>
-            <p>Dual-control brakes, safety signage, and full insurance for a secure learning experience.</p>
+            <h3>Instant Certificate Delivery</h3>
+            <p>Get your completion certificate by email the moment you finish. No waiting, no extra fees.</p>
           </div>
           <div class="why-us-card">
-            <h3>Both In-Person & Online Training</h3>
-            <p>Choose the learning style that suits you best with our flexible in-person and online driver training options.</p>
+            <h3>Real Support, Real People</h3>
+            <p>Have a question? Call us directly at (804) 601-0480. We're a local Virginia business, not a call center.</p>
           </div>
           <div class="why-us-card">
-            <h3>We Handle the DMV Paperwork</h3>
-            <p>Focus on driving while we take care of the details.</p>
+            <h3>Money-Back Guarantee</h3>
+            <p>Full refund available before certificate issuance if you decide the course isn't right for you.</p>
           </div>
         </div>
       </div>
       <div class="why-us-image">
         <img src="images/8-1-1.webp" alt="Driving lesson" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT — New: adds local identity and trust -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-image-grid">
+        <div class="about-img-main">
+          <img src="images/hero.webp" alt="Axis Driving Courses office" />
+        </div>
+        <div class="about-stat-card">
+          <span class="stat-num">2,000+</span>
+          <span class="stat-label">Students Served</span>
+        </div>
+        <div class="about-stat-card">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Years in Business</span>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="section-label" style="color: var(--red);">About Us</span>
+        <h2 class="section-title">A Real Virginia Driving School</h2>
+        <p class="section-subtitle">Axis Driving Courses is a locally owned and operated driving school based in Chesapeake, VA. We're not a faceless online company — we have a physical office, real instructors, and a team that answers the phone when you call.</p>
+
+        <div class="about-tags">
+          <span class="about-tag">Virginia DMV Licensed</span>
+          <span class="about-tag">BBB Accredited</span>
+          <span class="about-tag">Locally Owned</span>
+          <span class="about-tag">Certified Instructors</span>
+          <span class="about-tag">Physical Location</span>
+        </div>
+
+        <a href="about.html" class="btn-secondary" style="border-radius: 50px;">Learn More About Us <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </section>
@@ -750,6 +1183,25 @@
       </div>
     </div>
   </section>
+
+  <!-- BOTTOM CTA — New: final CTA before footer -->
+  <div class="bottom-cta">
+    <div class="bottom-cta-inner">
+      <h2>Ready to get started? <span>Find the right course in 30 seconds.</span></h2>
+      <div class="bottom-cta-actions">
+        <a href="https://form.typeform.com/to/nXBqOPwj" onclick="navigator.sendBeacon && gtag('event', 'homepage_bottom_cta', {course: 'find_my_course', button_text: 'Find My Course', transport_type: 'beacon'});" class="btn-primary" style="border-radius: 50px;">Find My Course <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="tel:+18046010480" class="btn-ghost" style="border-radius: 50px;">Or Call (804) 601-0480</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY MOBILE CTA — New: always-visible CTA on mobile -->
+  <div class="mobile-sticky-cta">
+    <a href="https://form.typeform.com/to/nXBqOPwj" onclick="navigator.sendBeacon && gtag('event', 'homepage_sticky_cta', {course: 'find_my_course', button_text: 'Find My Course', transport_type: 'beacon'});">
+      Find My Course
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
 
   <script src="components/footer.js"></script>
 

@@ -1,6 +1,24 @@
 // Shared Scripts — loaded on every page
 // Usage: <script src="scripts.js"></script>
 
+// FAQ accordion toggle
+function toggleFaq(btn) {
+  var item = btn.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+
+  // Close all other FAQ items
+  document.querySelectorAll('.faq-item.open').forEach(function(el) {
+    el.classList.remove('open');
+    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+  });
+
+  // Toggle the clicked one
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
 // Mobile menu toggle
 function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
