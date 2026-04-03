@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Exclude thank-you pages and variant landing pages
+Disallow: /thank-you-radep.html
+Disallow: /thank-you-driver-improvement.html
+Disallow: /thank-you-drivers-manual.html
+Disallow: /driver-improvement-course-snpl.html
+Disallow: /driver-improvement-course-v2.html
+Disallow: /radep-course-snpl.html
+
+Sitemap: https://www.axisdrivingcourses.com/sitemap.xml
